@@ -10,6 +10,8 @@ public class TerminalManager : MonoBehaviour
 
     [SerializeField] private GameObject digitField;
     [SerializeField] private GameObject digitsParent;
+    [SerializeField] private GameObject successCanvas;
+    [SerializeField] private GameObject txtIncorrect;
 
     private List<GameObject> digitFields = new List<GameObject>();
     private List<bool> codeCorrect = new List<bool>();
@@ -77,16 +79,12 @@ public class TerminalManager : MonoBehaviour
 
         if (correct)
         {
-            Debug.Log("Code correct!");
+            gameObject.SetActive(false);
+            successCanvas.SetActive(true);
         }
         else if (!correct)
         {
-            SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
-
-            for (int i = 0; i < digitFields.Count; i++)
-            {
-                digitFields[i].GetComponent<TMP_InputField>().text = "";
-            }
+            StartCoroutine(DisplayIncorrect());
         }
     }
 
@@ -106,6 +104,22 @@ public class TerminalManager : MonoBehaviour
         else if (!_focused)
         {
             _inputField.DeactivateInputField();
+        }
+    }
+
+    private IEnumerator DisplayIncorrect()
+    {
+        txtIncorrect.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        txtIncorrect.SetActive(false);
+
+        SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
+
+        for (int i = 0; i < digitFields.Count; i++)
+        {
+            digitFields[i].GetComponent<TMP_InputField>().text = "";
         }
     }
 }
