@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TerminalManager : MonoBehaviour
 {
@@ -12,37 +14,14 @@ public class TerminalManager : MonoBehaviour
     [SerializeField] private GameObject digitsParent;
     [SerializeField] private GameObject successCanvas;
     [SerializeField] private GameObject txtIncorrect;
+    [SerializeField] private Image imgLogo;
 
     private List<GameObject> digitFields = new List<GameObject>();
     private List<bool> codeCorrect = new List<bool>();
-    private string code = "1234";
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
+    private string code;
 
-    private void Start()
-    {
-        foreach (char _digit in code)
-        {
-            GameObject go = Instantiate(digitField);
-            go.transform.SetParent(digitsParent.transform);
-            digitFields.Add(go);
-            codeCorrect.Add(false);
-        }
-
-        StartCoroutine(FocusFirstFieldNextFrame());
-    }
-
-    private IEnumerator FocusFirstFieldNextFrame()
-    {
-        yield return new WaitForEndOfFrame();
-        SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
-    }
+    private bool resetting = false;
 
     public List<GameObject> GetDigitFields()
     {
@@ -64,28 +43,14 @@ public class TerminalManager : MonoBehaviour
         codeCorrect[_index] = _value;
     }
 
-    public void CheckCodeCorrect()
+    public bool GetResetting()
     {
-        bool correct = true;
+        return resetting;
+    }
 
-        foreach (bool b in codeCorrect)
-        {
-            if (!b)
-            {
-                correct = false;
-                break;
-            }
-        }
-
-        if (correct)
-        {
-            gameObject.SetActive(false);
-            successCanvas.SetActive(true);
-        }
-        else if (!correct)
-        {
-            StartCoroutine(DisplayIncorrect());
-        }
+    public void SetResetting(bool _value)
+    {
+        resetting = _value;
     }
 
     public GameObject GetFocusedGameObject()
@@ -107,6 +72,96 @@ public class TerminalManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        imgLogo.gameObject.SetActive(true);
+        imgLogo.sprite = LoadImageFromPath("Logo");
+        imgLogo.preserveAspect = true;
+
+        string filePath = Application.streamingAssetsPath + "/Code.txt";
+
+        if (File.Exists(filePath))
+        {
+            code = File.ReadAllText(filePath).Trim();
+        }
+        else
+        {
+            Debug.LogWarning("Code file not found, using default code.");
+        }
+
+        for (int i = 0; i < code.Length; i++)
+        {
+            GameObject go = Instantiate(digitField);
+            go.transform.SetParent(digitsParent.transform);
+            digitFields.Add(go);
+            codeCorrect.Add(false);
+        }
+
+        StartCoroutine(FocusFirstFieldNextFrame());
+    }
+
+    public Sprite LoadImageFromPath(string _imgName)
+    {
+        string[] matches = Directory.GetFiles(Application.streamingAssetsPath, _imgName + ".*");
+
+        if (matches.Length > 0)
+        {
+            string filePath = matches[0];
+
+            byte[] fileData = File.ReadAllBytes(filePath);
+
+            Texture2D tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData);
+
+            Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+
+            return sprite;
+        }
+        else
+        {
+            Debug.LogWarning("Code file not found, using default code.");
+            return null;
+        }
+    }
+
+    private IEnumerator FocusFirstFieldNextFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
+    }
+
+    public void CheckCodeCorrect()
+    {
+        bool correct = true;
+
+        foreach (bool b in codeCorrect)
+        {
+            if (!b)
+            {
+                correct = false;
+                break;
+            }
+        }
+
+        if (correct)
+        {
+            Instantiate(successCanvas);
+            gameObject.SetActive(false);
+        }
+        else if (!correct)
+        {
+            StartCoroutine(DisplayIncorrect());
+        }
+    }
+
     private IEnumerator DisplayIncorrect()
     {
         txtIncorrect.SetActive(true);
@@ -121,5 +176,7 @@ public class TerminalManager : MonoBehaviour
         {
             digitFields[i].GetComponent<TMP_InputField>().text = "";
         }
+
+        resetting = false;
     }
 }
