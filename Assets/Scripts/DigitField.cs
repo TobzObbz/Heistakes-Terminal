@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class DigitField : MonoBehaviour
 {
+    [SerializeField] private float shakeDuration = 0.5f;
+    [SerializeField] private float shakeSpeed = 40f;
+    [SerializeField] private float shakeDistance = 8f;
+
     private int index;
 
     public void OnValueChanged()
@@ -58,6 +62,30 @@ public class DigitField : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        TerminalManager.Instance.CheckCodeCorrect();
+        if (TerminalManager.Instance.CheckCodeCorrect())
+        {
+            TerminalManager.Instance.DisplaySuccess();
+        }
+        else
+        {
+            StartCoroutine(TerminalManager.Instance.DisplayIncorrect());
+        }
+    }
+
+    public IEnumerator Shake()
+    {
+        Vector2 originalPos = transform.position;
+        float elapsed = 0.0f;
+
+        while (elapsed < shakeDuration)
+        {
+            float x = Mathf.Sin(elapsed * shakeSpeed) * shakeDistance;
+            transform.position = originalPos + new Vector2(x, 0);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = originalPos;
     }
 }

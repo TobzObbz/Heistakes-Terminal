@@ -13,7 +13,6 @@ public class TerminalManager : MonoBehaviour
     [SerializeField] private GameObject digitField;
     [SerializeField] private GameObject digitsParent;
     [SerializeField] private GameObject successCanvas;
-    [SerializeField] private GameObject txtIncorrect;
     [SerializeField] private Image imgLogo;
 
     private List<GameObject> digitFields = new List<GameObject>();
@@ -138,37 +137,30 @@ public class TerminalManager : MonoBehaviour
         SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
     }
 
-    public void CheckCodeCorrect()
+    public bool CheckCodeCorrect()
     {
-        bool correct = true;
-
         foreach (bool b in codeCorrect)
         {
             if (!b)
             {
-                correct = false;
-                break;
+                return false;
             }
         }
 
-        if (correct)
-        {
-            Instantiate(successCanvas);
-            gameObject.SetActive(false);
-        }
-        else if (!correct)
-        {
-            StartCoroutine(DisplayIncorrect());
-        }
+        return true;
     }
 
-    private IEnumerator DisplayIncorrect()
+    public void DisplaySuccess()
     {
-        txtIncorrect.SetActive(true);
+        Instantiate(successCanvas);
+        gameObject.SetActive(false);
+    }
+
+    public IEnumerator DisplayIncorrect()
+    {
+        ShakeAllDigitFields();
 
         yield return new WaitForSeconds(1f);
-
-        txtIncorrect.SetActive(false);
 
         SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
 
@@ -178,5 +170,13 @@ public class TerminalManager : MonoBehaviour
         }
 
         resetting = false;
+    }
+
+    private void ShakeAllDigitFields()
+    {
+        foreach (DigitField df in digitsParent.GetComponentsInChildren<DigitField>())
+        {
+            StartCoroutine(df.Shake());
+        }
     }
 }

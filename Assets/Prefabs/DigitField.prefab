@@ -86,9 +86,9 @@ RectTransform:
   - {fileID: 9150310782772891989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -960, y: -540}
   m_SizeDelta: {x: 160, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5257450205675704465
@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a06116b9cdd364aba32e22e974b15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DigitField
+  shakeDuration: 0.5
+  shakeSpeed: 40
+  shakeDistance: 8
 --- !u!1 &6701271773573484578
 GameObject:
   m_ObjectHideFlags: 0
