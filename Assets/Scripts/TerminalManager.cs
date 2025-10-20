@@ -4,6 +4,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Experimental.Audio;
 using UnityEngine.UI;
 
 public class TerminalManager : MonoBehaviour
@@ -12,8 +13,11 @@ public class TerminalManager : MonoBehaviour
 
     [SerializeField] private GameObject digitField;
     [SerializeField] private GameObject digitsParent;
-    [SerializeField] private GameObject successCanvas;
+
     [SerializeField] private Image imgLogo;
+
+    [SerializeField] private GameObject successCanvas;
+    [SerializeField] private GameObject txtIncorrect;
 
     private List<GameObject> digitFields = new List<GameObject>();
     private List<bool> codeCorrect = new List<bool>();
@@ -64,6 +68,7 @@ public class TerminalManager : MonoBehaviour
             _inputField.Select();
             _inputField.ActivateInputField();
             EventSystem.current.SetSelectedGameObject(_inputField.gameObject);
+            _inputField.OnPointerClick(new PointerEventData(EventSystem.current));
         }
         else if (!_focused)
         {
@@ -133,7 +138,8 @@ public class TerminalManager : MonoBehaviour
 
     private IEnumerator FocusFirstFieldNextFrame()
     {
-        yield return new WaitForEndOfFrame();
+        yield return null;
+        yield return null;
         SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
     }
 
@@ -158,9 +164,15 @@ public class TerminalManager : MonoBehaviour
 
     public IEnumerator DisplayIncorrect()
     {
+        txtIncorrect.SetActive(true);
+
         ShakeAllDigitFields();
 
+        GetComponent<AudioSource>().Play();
+
         yield return new WaitForSeconds(1f);
+
+        txtIncorrect.SetActive(false);
 
         SetInputFieldFocused(digitFields[0].GetComponent<TMP_InputField>(), true);
 
