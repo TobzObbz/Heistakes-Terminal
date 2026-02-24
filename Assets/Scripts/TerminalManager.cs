@@ -4,7 +4,6 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Experimental.Audio;
 using UnityEngine.UI;
 
 public class TerminalManager : MonoBehaviour

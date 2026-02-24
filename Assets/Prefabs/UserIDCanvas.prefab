@@ -292,7 +292,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 244938072501159446}
+        m_TargetAssemblyTypeName: InputUserIDHandler, Assembly-CSharp
+        m_MethodName: OnValueChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -460,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346785467769466745}
   m_Layer: 0
-  m_Name: Fail
+  m_Name: Failure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,13 +643,14 @@ GameObject:
   - component: {fileID: 5772950361219789040}
   - component: {fileID: 8284621525775243426}
   - component: {fileID: 8889490116803846082}
+  - component: {fileID: 244938072501159446}
   m_Layer: 5
   m_Name: UserIDCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8907381590242046597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -723,6 +736,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &244938072501159446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458598201822650790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c60e0302466e6489325712eecad72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputUserIDHandler
+  userIDInputField: {fileID: 1088505944280505874}
+  successScreen: {fileID: 6129444905970203183}
+  failureScreen: {fileID: 3392338970923784170}
 --- !u!1 &4817321407366026962
 GameObject:
   m_ObjectHideFlags: 0

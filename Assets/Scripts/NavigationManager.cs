@@ -1,22 +1,38 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[Serializable]
+public class CanvasEntry
+{
+    public Canvas canvas;
+    public bool navigable;
+}
+
 public class NavigationManager : MonoBehaviour
 {
+    public static NavigationManager Instance;
+
     [SerializeField] private InputActionReference nextCanvasAction;
     [SerializeField] private InputActionReference previousCanvasAction;
 
-    [SerializeField] private List<Canvas> canvases;
+    [SerializeField] private List<CanvasEntry> canvases;
+        public List<CanvasEntry> GetCanvases() => canvases;
+
     private int currentCanvasIndex = 0;
 
-    private List<bool> canvasFinished;
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
-        canvasFinished = new List<bool>(canvases.Count);
-
-        canvases[currentCanvasIndex].gameObject.SetActive(true);
+        canvases[currentCanvasIndex].canvas.gameObject.SetActive(true);
     }
 
     private void OnEnable()
@@ -30,30 +46,38 @@ public class NavigationManager : MonoBehaviour
 
     private void NextCanvas(InputAction.CallbackContext context)
     {
-        CanvasNavigation(currentCanvasIndex++);
+        CanvasNavigation(currentCanvasIndex + 1);
     }
 
     private void PreviousCanvas(InputAction.CallbackContext context)
     {
-        CanvasNavigation(currentCanvasIndex--);
+        CanvasNavigation(currentCanvasIndex - 1);
     }
 
     private void CanvasNavigation(int _index)
     {
-        if (!canvasFinished[currentCanvasIndex])
+        if (_index > currentCanvasIndex)
         {
-            return;
+            if (!canvases[currentCanvasIndex].navigable)
+            {
+                return;
+            }
         }
-
-        canvases[currentCanvasIndex].gameObject.SetActive(false);
 
         if (_index < 0 || _index >= canvases.Count)
         {
             return;
         }
 
+        canvases[currentCanvasIndex].canvas.gameObject.SetActive(false);
+
         currentCanvasIndex = _index;
 
-        canvases[currentCanvasIndex].gameObject.SetActive(true);
+        canvases[currentCanvasIndex].canvas.gameObject.SetActive(true);
+    }
+
+    public void SetNavigable(bool _navigable)
+    {
+        canvases[currentCanvasIndex].navigable = _navigable;
     }
 }

@@ -23,6 +23,51 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "F8 Clue",
+                    "type": "Button",
+                    "id": "abe1a1a8-4d2d-43a7-a88e-1b8fb21c3d8c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "F9 Clue",
+                    "type": "Button",
+                    "id": "2cc5fc6a-22fa-474d-bf33-6b9f7a63187e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "F10 Clue",
+                    "type": "Button",
+                    "id": "75716e1e-9c14-4e03-b7ba-12053e790d88",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "F11 Clue",
+                    "type": "Button",
+                    "id": "e2ecafc3-fd5a-410d-8b34-2100027ef139",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "F12 Clue",
+                    "type": "Button",
+                    "id": "5866a2f3-f00c-419d-b06b-75fc7a8f08e6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -45,6 +90,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "PreviousCanvas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c001ff35-c03e-40cc-a2ff-efaf980e04fb",
+                    "path": "<Keyboard>/f8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F8 Clue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3344e36e-e778-47bb-b149-ca39e75afb9b",
+                    "path": "<Keyboard>/f9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F9 Clue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee774be4-809d-4a25-a368-55654875142a",
+                    "path": "<Keyboard>/f10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F10 Clue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6cf8e54b-6bda-4a83-a6b6-8bf9f6f7c564",
+                    "path": "<Keyboard>/f11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F11 Clue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "978d085a-2c5b-41d5-8b73-5db3c7f93d7c",
+                    "path": "<Keyboard>/f12",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "F12 Clue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
