@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8907381590242046597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputUserIDHandler
   userIDInputField: {fileID: 1088505944280505874}
-  failureScreen: {fileID: 0}
-  failureWaitTime: 3
+  incorrectInputScreen: {fileID: 0}
+  failureWaitTime: 4
 --- !u!1 &5200255429532371364
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 250
-  m_fontSizeBase: 250
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -582,8 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SafeLetterCanvas
   safeInputField: {fileID: 2514436932426116805}
   incorrectInput: {fileID: 0}
-  lockerNumber: {fileID: 5881545264004967425}
-  lockerLocation: {fileID: 5276735750187596323}
+  safeLetter: 0
 --- !u!1 &6517183823243243294
 GameObject:
   m_ObjectHideFlags: 0

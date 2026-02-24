@@ -9,19 +9,20 @@ public class SafeLetterCanvas : MonoBehaviour
     [SerializeField] private TMP_InputField safeInputField;
     [SerializeField] private GameObject incorrectInput;
 
-    [SerializeField] private TMP_Text lockerNumber;
-    [SerializeField] private TMP_Text lockerLocation;
+    //[SerializeField] private TMP_Text lockerNumber;
+    //[SerializeField] private TMP_Text lockerLocation;
 
-    private string safe = "SAFE";
-    private int safeIndex = 0;
+    [SerializeField] private char safeLetter;
 
-    private List<string> safeLocations = new List<string>
-    {
-        "A15",
-        "A32",
-        "A6",
-        "A26"
-    };
+    //private int safeIndex = 0;
+
+    //private List<string> safeLocations = new List<string>
+    //{
+    //    "A15",
+    //    "A32",
+    //    "A6",
+    //    "A26"
+    //};
 
     private void Start()
     {
@@ -45,18 +46,9 @@ public class SafeLetterCanvas : MonoBehaviour
             return;
         }
 
-        if (safeInputField.text == safe[safeIndex].ToString())
+        if (safeInputField.text == safeLetter.ToString())
         {
             StartCoroutine(DisplaySuccess());
-
-            safeIndex++;
-
-            if (safeIndex == safe.Length)
-            {
-                //Success logic
-                NavigationManager.Instance.SetNavigable(true);
-                NavigationManager.Instance.CanvasNavigation(NavigationManager.Instance.GetCurrentCanvasIndex() + 1);
-            }
         }
         else
         {
@@ -69,8 +61,9 @@ public class SafeLetterCanvas : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         safeInputField.text = "";
-        lockerNumber.text = (safeIndex + 1).ToString();
-        lockerLocation.text = safeLocations[safeIndex];
+
+        NavigationManager.Instance.SetNavigable(true);
+        NavigationManager.Instance.CanvasNavigation(NavigationManager.Instance.GetCurrentCanvasIndex() + 1);
     }
 
     private IEnumerator DisplayFailure()
