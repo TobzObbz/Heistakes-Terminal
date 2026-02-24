@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7fcff968c73147ad2f8ea1752d560, type: 3}
   m_Name: testClue2
   m_EditorClassIdentifier: Assembly-CSharp::ClueSO
-  activationKey: {fileID: 0}
-  clueText: 
-  audio: {fileID: 0}
+  activationKey: {fileID: -8133627989714812482, guid: 62f63b14a536f9e4899e078552ad8f18, type: 3}
+  clueText: This is another test
+  charInterval: 0.1
+  audioSource: {fileID: 0}

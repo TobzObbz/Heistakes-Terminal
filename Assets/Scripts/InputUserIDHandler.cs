@@ -18,6 +18,7 @@ public class InputUserIDHandler : MonoBehaviour
     {
         userIDInputField.onValidateInput += OnValidateInput;
     }
+
     private void Start()
     {
         string filePath = Application.streamingAssetsPath + "/UserID.txt";
