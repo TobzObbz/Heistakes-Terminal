@@ -21,6 +21,7 @@ public class NavigationManager : MonoBehaviour
         public List<CanvasEntry> GetCanvases() => canvases;
 
     private int currentCanvasIndex = 0;
+        public int GetCurrentCanvasIndex() => currentCanvasIndex;
 
     private void Awake()
     {
@@ -54,7 +55,7 @@ public class NavigationManager : MonoBehaviour
         CanvasNavigation(currentCanvasIndex - 1);
     }
 
-    private void CanvasNavigation(int _index)
+    public void CanvasNavigation(int _index)
     {
         if (_index > currentCanvasIndex)
         {

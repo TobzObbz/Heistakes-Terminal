@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +9,19 @@ public class SafeLetterCanvas : MonoBehaviour
     [SerializeField] private TMP_InputField safeInputField;
     [SerializeField] private GameObject incorrectInput;
 
+    [SerializeField] private TMP_Text lockerNumber;
+    [SerializeField] private TMP_Text lockerLocation;
+
     private string safe = "SAFE";
     private int safeIndex = 0;
+
+    private List<string> safeLocations = new List<string>
+    {
+        "A15",
+        "A32",
+        "A6",
+        "A26"
+    };
 
     private void Start()
     {
@@ -27,21 +40,37 @@ public class SafeLetterCanvas : MonoBehaviour
 
     public void OnValueChanged()
     {
+        if (safeInputField.text == "")
+        {
+            return;
+        }
+
         if (safeInputField.text == safe[safeIndex].ToString())
         {
-            safeInputField.text = "";
+            StartCoroutine(DisplaySuccess());
 
             safeIndex++;
+
             if (safeIndex == safe.Length)
             {
-                Debug.Log("Safe opened!");
+                //Success logic
+                NavigationManager.Instance.SetNavigable(true);
+                NavigationManager.Instance.CanvasNavigation(NavigationManager.Instance.GetCurrentCanvasIndex() + 1);
             }
         }
         else
         {
-            safeInputField.text = "";
             StartCoroutine(DisplayFailure());
         }
+    }
+
+    private IEnumerator DisplaySuccess()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        safeInputField.text = "";
+        lockerNumber.text = (safeIndex + 1).ToString();
+        lockerLocation.text = safeLocations[safeIndex];
     }
 
     private IEnumerator DisplayFailure()
@@ -49,6 +78,7 @@ public class SafeLetterCanvas : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         incorrectInput.SetActive(true);
+        safeInputField.text = "";
 
         yield return new WaitForSeconds(3);
 

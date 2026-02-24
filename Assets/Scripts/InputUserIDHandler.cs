@@ -7,8 +7,7 @@ using UnityEngine.InputSystem;
 public class InputUserIDHandler : MonoBehaviour
 {
     [SerializeField] private TMP_InputField userIDInputField;
-    [SerializeField] private GameObject successScreen;
-    [SerializeField] private GameObject failureScreen;
+    [SerializeField] private GameObject incorrectInputScreen;
 
     [SerializeField] private float failureWaitTime = 3f;
 
@@ -49,8 +48,8 @@ public class InputUserIDHandler : MonoBehaviour
         if (userIDInputField.text == userID)
         {
             //Success logic goes here
-            successScreen.SetActive(true);
             NavigationManager.Instance.SetNavigable(true);
+            NavigationManager.Instance.CanvasNavigation(NavigationManager.Instance.GetCurrentCanvasIndex() + 1);
         }
         else
         {
@@ -62,10 +61,10 @@ public class InputUserIDHandler : MonoBehaviour
 
     private IEnumerator DisplayFailure()
     {
-        failureScreen.SetActive(true);
+        incorrectInputScreen.SetActive(true);
 
         yield return new WaitForSeconds(failureWaitTime);
 
-        failureScreen.SetActive(false);
+        incorrectInputScreen.SetActive(false);
     }
 }
