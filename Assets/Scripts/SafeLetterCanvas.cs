@@ -9,20 +9,7 @@ public class SafeLetterCanvas : MonoBehaviour
     [SerializeField] private TMP_InputField safeInputField;
     [SerializeField] private GameObject incorrectInput;
 
-    //[SerializeField] private TMP_Text lockerNumber;
-    //[SerializeField] private TMP_Text lockerLocation;
-
     [SerializeField] private char safeLetter;
-
-    //private int safeIndex = 0;
-
-    //private List<string> safeLocations = new List<string>
-    //{
-    //    "A15",
-    //    "A32",
-    //    "A6",
-    //    "A26"
-    //};
 
     private void Start()
     {

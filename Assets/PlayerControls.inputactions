@@ -74,7 +74,7 @@
                 {
                     "name": "",
                     "id": "7e9ec283-5a71-42b5-a3aa-fe49d31309db",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -85,7 +85,7 @@
                 {
                     "name": "",
                     "id": "bab39369-5c77-4153-8688-7317f5dddc79",
-                    "path": "<Keyboard>/backspace",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
