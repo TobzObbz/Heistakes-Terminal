@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 8387928573711176030}
   - component: {fileID: 3479282096569001009}
   - component: {fileID: 3798558045552605699}
+  - component: {fileID: 2708432588907602816}
   m_Layer: 5
   m_Name: WelcomeEmployeeCanvas
   m_TagString: Untagged
@@ -243,3 +244,15 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2708432588907602816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955610375290932900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc3640713c163e4c9128f8b0af06a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WelcomeEmployeeCanvas
