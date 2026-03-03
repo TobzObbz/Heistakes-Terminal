@@ -27,7 +27,10 @@ public class InputUserIDHandler : MonoBehaviour
         }
 
         userIDInputField.onValidateInput += OnValidateInput;
+    }
 
+    private void OnEnable()
+    {
         userIDInputField.ActivateInputField();
     }
 
@@ -65,5 +68,6 @@ public class InputUserIDHandler : MonoBehaviour
         yield return new WaitForSeconds(failureWaitTime);
 
         incorrectInputScreen.SetActive(false);
+        userIDInputField.ActivateInputField();
     }
 }

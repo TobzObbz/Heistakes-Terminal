@@ -2,6 +2,7 @@ using System.Collections;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SafeLetterCanvas : MonoBehaviour
 {
@@ -26,8 +27,11 @@ public class SafeLetterCanvas : MonoBehaviour
         }
 
         safeInputField.onValidateInput += OnValidateInput;
+    }
 
-        safeInputField.ActivateInputField();
+    private void OnEnable()
+    {
+        StartCoroutine(ActivateInputFieldNextFrame());
     }
 
     private char OnValidateInput(string _text, int _charIndex, char _addedChar)
@@ -57,6 +61,12 @@ public class SafeLetterCanvas : MonoBehaviour
         }
     }
 
+    private IEnumerator ActivateInputFieldNextFrame()
+    {
+        yield return null;
+        safeInputField.ActivateInputField();
+    }
+
     private IEnumerator DisplaySuccess()
     {
         yield return new WaitForSeconds(0.5f);
@@ -77,5 +87,6 @@ public class SafeLetterCanvas : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         incorrectInput.SetActive(false);
+        safeInputField.ActivateInputField();
     }
 }
