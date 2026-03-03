@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 820.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 69
+  controlID: 139
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 41
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -223,8 +223,8 @@ MonoBehaviour:
     y: 0
     width: 256
     height: 764.8
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -249,8 +249,8 @@ MonoBehaviour:
     y: 0
     width: 405.59998
     height: 764.8
-  m_MinSize: {x: 276, y: 126}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -411,16 +411,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 62
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: 62
   m_LastProjectPath: C:\Users\tobyy\Documents\Games\Heistakes-Terminal
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: d8b90000
-    m_LastClickedID: 47576
-    m_ExpandedIDs: 00000000a0b80000e8b9000000ca9a3bffffff7f
+    m_SelectedIDs: c2b80000
+    m_LastClickedID: 47298
+    m_ExpandedIDs: 00000000c2b8000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -449,7 +449,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0b80000
+    m_ExpandedIDs: 00000000c2b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -481,18 +481,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300008a1500002e090600b4d20000b8d200007aa70100106b01009a7101005a51010082750000745501003adc0000f84a0100c8b80400cab80400ccb80400ceb80400d0b80400d2b80400607e0100e6610000e0a20000146a0100d08201003cf202000af10200dcf90200f8f902001af8020020f9020054f9020094f90200b0f90200a4f6020064fb0200c254000072fb0200e2fb0200e8ff020014ed01001cb4010078470100e2f40100d27e0200ca360100e6180500d6560500dc180500c65605007e3d010000000000124b0100327b04003e760000eeef000022040100be7c0400107e0400be7b04000c7f04001c7f0400187e0400fe860000a23a0100ecbb00006cb60000a282000046860000e27300004a820000d4fe0000d4ce00003eb40000bece00003a360100e6c500006eb7000032b50000ecb6000072b500007a6e0000a04800009802000004a7ffff70de000020a7ffff6cde000054880700667c0000549f00008c960000248400002e4a0100344a0100364a0100384a01003a4a01003e4a0100404a0100424a0100464a0100484a01004a4a0100504a0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Videos
-      m_OriginalName: Videos
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 47592
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 8}
@@ -1478,21 +1478,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a037ffff20faffff00fbffff
+      m_ExpandedIDs: 70e7ffff00fbffff6ec10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GoldAssetEvalCanvas
-        m_OriginalName: GoldAssetEvalCanvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -51642
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 9}

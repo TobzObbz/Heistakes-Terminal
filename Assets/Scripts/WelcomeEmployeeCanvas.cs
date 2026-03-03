@@ -7,6 +7,7 @@ public class WelcomeEmployeeCanvas : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            NavigationManager.Instance.SetNavigable(true);
             NavigationManager.Instance.CanvasNavigation(NavigationManager.Instance.GetCurrentCanvasIndex() + 1);
         }
     }
