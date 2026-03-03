@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class CanvasEntry
@@ -45,6 +46,15 @@ public class NavigationManager : MonoBehaviour
         previousCanvasAction.action.Enable();
     }
 
+    private void OnDisable()
+    {
+        nextCanvasAction.action.performed -= NextCanvas;
+        previousCanvasAction.action.performed -= PreviousCanvas;
+
+        previousCanvasAction.action.Disable();
+        nextCanvasAction.action.Disable();
+    }
+
     private void NextCanvas(InputAction.CallbackContext context)
     {
         CanvasNavigation(currentCanvasIndex + 1);
@@ -65,16 +75,23 @@ public class NavigationManager : MonoBehaviour
             }
         }
 
-        if (_index < 0 || _index >= canvases.Count)
+        if (_index < 0)
         {
             return;
         }
+        else if (_index >= canvases.Count)
+        {
+            currentCanvasIndex = 0;
+
+            SceneManager.LoadScene("HeistakesTerminal");
+            return;
+        }
+        
+        canvases[_index].canvas.gameObject.SetActive(true);
 
         canvases[currentCanvasIndex].canvas.gameObject.SetActive(false);
 
         currentCanvasIndex = _index;
-
-        canvases[currentCanvasIndex].canvas.gameObject.SetActive(true);
     }
 
     public void SetNavigable(bool _navigable)

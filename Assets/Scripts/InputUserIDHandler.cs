@@ -13,11 +13,6 @@ public class InputUserIDHandler : MonoBehaviour
 
     private string userID;
 
-    private void Awake()
-    {
-        userIDInputField.onValidateInput += OnValidateInput;
-    }
-
     private void Start()
     {
         string filePath = Application.streamingAssetsPath + "/UserID.txt";
@@ -30,6 +25,10 @@ public class InputUserIDHandler : MonoBehaviour
         {
             Debug.LogWarning("Code file not found, using default code.");
         }
+
+        userIDInputField.onValidateInput += OnValidateInput;
+
+        userIDInputField.ActivateInputField();
     }
 
     private char OnValidateInput(string _text, int _charIndex, char _addedChar)

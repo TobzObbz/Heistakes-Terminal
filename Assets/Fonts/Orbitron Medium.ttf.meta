@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f457ea99def5e6845ad23e45c6e19bde
+guid: 4aa3788594f922741826d5f4723349cb
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - VCR OSD Mono
+  - Orbitron
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

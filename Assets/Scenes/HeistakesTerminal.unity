@@ -184,7 +184,7 @@ MonoBehaviour:
   - canvas: {fileID: 219457820}
     navigable: 1
   - canvas: {fileID: 1718393580}
-    navigable: 0
+    navigable: 1
 --- !u!4 &279548050
 Transform:
   m_ObjectHideFlags: 0
@@ -307,6 +307,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 8400000, guid: 257943ae2df62464aadc091468c02c54, type: 2}
+    - target: {fileID: 1507654935809245445, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3485777494242972218, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_Name
       value: SDBLetter2Canvas
@@ -319,6 +323,10 @@ PrefabInstance:
       propertyPath: incorrectInput
       value: 
       objectReference: {fileID: 1715314395}
+    - target: {fileID: 3917509198230368748, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: safeLetterIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8720702218266816091, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_VideoClip
       value: 
@@ -566,6 +574,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 8400000, guid: 4ffcffedf326abe48858566af054813a, type: 2}
+    - target: {fileID: 1507654935809245445, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3485777494242972218, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_Name
       value: SDBLetter3Canvas
@@ -578,6 +590,10 @@ PrefabInstance:
       propertyPath: incorrectInput
       value: 
       objectReference: {fileID: 1715314395}
+    - target: {fileID: 3917509198230368748, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: safeLetterIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8720702218266816091, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_VideoClip
       value: 
@@ -688,6 +704,10 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 8400000, guid: e3d396d04080c834cb08f6a4b436e667, type: 2}
+    - target: {fileID: 1507654935809245445, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3485777494242972218, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_Name
       value: SDBLetter4Canvas
@@ -700,6 +720,10 @@ PrefabInstance:
       propertyPath: incorrectInput
       value: 
       objectReference: {fileID: 1715314395}
+    - target: {fileID: 3917509198230368748, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: safeLetterIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8720702218266816091, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_VideoClip
       value: 
@@ -934,6 +958,18 @@ PrefabInstance:
     - target: {fileID: 4458598201822650790, guid: b3d044710b625c24a884dfce82961227, type: 3}
       propertyPath: m_Name
       value: ServerResetCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458598201822650790, guid: b3d044710b625c24a884dfce82961227, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670710014384347277, guid: b3d044710b625c24a884dfce82961227, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7459687953528915714, guid: a0f75e703d8251447a192e2d6487f922, type: 2}
+    - target: {fileID: 8670710014384347277, guid: b3d044710b625c24a884dfce82961227, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907381590242046597, guid: b3d044710b625c24a884dfce82961227, type: 3}
       propertyPath: m_Pivot.x
@@ -1397,6 +1433,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1196535290192049552, guid: b58a39558256ec944af42751f60cc808, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507654935809245445, guid: b58a39558256ec944af42751f60cc808, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3485777494242972218, guid: b58a39558256ec944af42751f60cc808, type: 3}

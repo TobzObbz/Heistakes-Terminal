@@ -1,6 +1,5 @@
-using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -9,11 +8,26 @@ public class SafeLetterCanvas : MonoBehaviour
     [SerializeField] private TMP_InputField safeInputField;
     [SerializeField] private GameObject incorrectInput;
 
-    [SerializeField] private char safeLetter;
+    [SerializeField] private int safeLetterIndex;
+
+    private string safeLetters;
 
     private void Start()
     {
+        string filePath = Application.streamingAssetsPath + "/SafeLetters.txt";
+
+        if (File.Exists(filePath))
+        {
+            safeLetters = File.ReadAllText(filePath).Trim();
+        }
+        else
+        {
+            Debug.LogWarning("Code file not found, using default code.");
+        }
+
         safeInputField.onValidateInput += OnValidateInput;
+
+        safeInputField.ActivateInputField();
     }
 
     private char OnValidateInput(string _text, int _charIndex, char _addedChar)
@@ -33,7 +47,7 @@ public class SafeLetterCanvas : MonoBehaviour
             return;
         }
 
-        if (safeInputField.text == safeLetter.ToString())
+        if (safeInputField.text == safeLetters[safeLetterIndex].ToString())
         {
             StartCoroutine(DisplaySuccess());
         }
