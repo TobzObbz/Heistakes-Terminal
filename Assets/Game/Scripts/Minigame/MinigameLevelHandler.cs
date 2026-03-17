@@ -7,7 +7,7 @@ public class MinigameLevelHandler : MonoBehaviour
 {
     public static MinigameLevelHandler Instance;
 
-    [SerializeField] private List<SceneAsset> levels;
+    [SerializeField] private List<string> levelNames;
 
     private int levelIndex = 0;
         public int GetLevelIndex() => levelIndex;
@@ -26,13 +26,13 @@ public class MinigameLevelHandler : MonoBehaviour
 
     public void LoadLevel(int _index)
     {
-        if (levels.Count == 0) return;
+        if (levelNames.Count == 0) return;
 
-        if (_index < levels.Count)
+        if (_index < levelNames.Count)
         {
             levelIndex = _index;
 
-            SceneManager.LoadScene(levels[levelIndex].name);
+            SceneManager.LoadScene(levelNames[levelIndex]);
         }
         else
         {

@@ -13,6 +13,8 @@ public class MinigameHandler : MonoBehaviour
     private Vector2 adjustedMove;
     private Rigidbody2D rb;
 
+    private bool startGame = false;
+
     private bool canMove = true;
         public bool SetCanMove(bool _canMove) => canMove = _canMove;
 
@@ -52,7 +54,15 @@ public class MinigameHandler : MonoBehaviour
             return;
         }
 
-        moveInput = context.ReadValue<Vector2>();
+        if (!startGame)
+        {
+            startGame = true;
+
+            Coroutine timerCoroutine = StartCoroutine(MinigameCanvas.Instance.StartTimer());
+            MinigameCanvas.Instance.SetTimerCoroutine(timerCoroutine);
+        }
+
+        moveInput = context.ReadValue<Vector2>();   
 
         adjustedMove = new Vector2(-moveInput.y, moveInput.x).normalized;
     }

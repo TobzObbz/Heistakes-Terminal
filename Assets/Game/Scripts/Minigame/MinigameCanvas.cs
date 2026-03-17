@@ -15,6 +15,7 @@ public class MinigameCanvas : MonoBehaviour
     private float currentTime;
 
     private Coroutine timerCoroutine;
+        public void SetTimerCoroutine(Coroutine _coroutine) => timerCoroutine = _coroutine;
 
     private void Awake()
     {
@@ -28,21 +29,26 @@ public class MinigameCanvas : MonoBehaviour
     {
         currentTime = startTime;
         txtTimer.text = currentTime.ToString();
-
-        timerCoroutine = StartCoroutine(StartTimer());
     }
     
-    private IEnumerator StartTimer()
+    public IEnumerator StartTimer()
     {
         while (currentTime > 0f)
         {
             currentTime -= Time.deltaTime;
-            txtTimer.text = currentTime.ToString("F2");
+
+            if (currentTime < 10f)
+            {
+                txtTimer.text = "0" + currentTime.ToString("F2");
+            }
+            else
+            {
+                txtTimer.text = currentTime.ToString("F2");
+            }
 
             yield return null;
         }
 
-        txtTimer.text = "Time expired";
         StartCoroutine(ShowOutcome(false));
     }
 

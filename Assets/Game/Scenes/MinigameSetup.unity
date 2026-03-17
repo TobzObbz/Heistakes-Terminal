@@ -285,10 +285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154e72cdc5727ba41a1a064bde5a4ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinigameLevelHandler
-  levels:
-  - {fileID: 102900000, guid: 00a3f8eb348b0b148bb4b685387112b7, type: 3}
-  - {fileID: 102900000, guid: f293c416bb55921439fda8be316120b5, type: 3}
-  - {fileID: 102900000, guid: 96a8ec4fc84279c4c960a7a82e319df5, type: 3}
+  levelNames:
+  - Level01
+  - Level02
+  - Level03
 --- !u!4 &1697712986
 Transform:
   m_ObjectHideFlags: 0
