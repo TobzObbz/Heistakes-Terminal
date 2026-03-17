@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 5712557c44b1f534da74165c816c6563
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2037399750196996193
+    second: ExitGateSpritesheet_0
+  - first:
+      213: 3885169616544209386
+    second: ExitGateSpritesheet_1
+  - first:
+      213: 8256057244359324096
+    second: ExitGateSpritesheet_2
+  - first:
+      213: 6005950287338436137
+    second: ExitGateSpritesheet_3
+  - first:
+      213: 2179328339267504916
+    second: ExitGateSpritesheet_4
+  - first:
+      213: -95176113690821698
+    second: ExitGateSpritesheet_5
+  - first:
+      213: -7134182047935642574
+    second: ExitGateSpritesheet_6
+  - first:
+      213: 398541372550192037
+    second: ExitGateSpritesheet_7
+  - first:
+      213: 1079615484591549663
+    second: ExitGateSpritesheet_8
+  - first:
+      213: 8867796597630212992
+    second: ExitGateSpritesheet_9
+  - first:
+      213: -3004625337132008347
+    second: ExitGateSpritesheet_10
+  - first:
+      213: 3132775112801799854
+    second: ExitGateSpritesheet_11
+  - first:
+      213: -5918712411592600763
+    second: ExitGateSpritesheet_12
+  - first:
+      213: 4979564624384230936
+    second: ExitGateSpritesheet_13
+  - first:
+      213: 5268602038481393484
+    second: ExitGateSpritesheet_14
+  - first:
+      213: -3506795496733061153
+    second: ExitGateSpritesheet_15
+  - first:
+      213: 4799048221733581462
+    second: ExitGateSpritesheet_16
+  - first:
+      213: 1059892622770756684
+    second: ExitGateSpritesheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1110
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16826f7374c464c10800000000000000
+      internalID: 2037399750196996193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1110
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1f35f3258639270800000000000000
+      internalID: 8256057244359324096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 555
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b4bf6f3978e3e10800000000000000
+      internalID: 2179328339267504916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 555
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234c3d5d93b4efc90800000000000000
+      internalID: -7134182047935642574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc271d20909bfe00800000000000000
+      internalID: 1079615484591549663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1110
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73030f9f4cc215e46b7a85020497936b
+      internalID: 3885169616544209386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1110
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9976e807e81c05641a9a95c5823d24b3
+      internalID: 6005950287338436137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 555
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c199caf56d5ee47b19727ee7fa4383
+      internalID: -95176113690821698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExitGateSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 555
+        width: 506
+        height: 555
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73d712be43855a42a9d7e944fa00b37
+      internalID: 398541372550192037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 29ead418931ed0a42b3caf7966a3ae25
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":3.0},"gridSpriteSize":{"x":506.0,"y":555.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ExitGateSpritesheet_0: 2037399750196996193
+      ExitGateSpritesheet_1: 3885169616544209386
+      ExitGateSpritesheet_2: 8256057244359324096
+      ExitGateSpritesheet_3: 6005950287338436137
+      ExitGateSpritesheet_4: 2179328339267504916
+      ExitGateSpritesheet_5: -95176113690821698
+      ExitGateSpritesheet_6: -7134182047935642574
+      ExitGateSpritesheet_7: 398541372550192037
+      ExitGateSpritesheet_8: 1079615484591549663
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

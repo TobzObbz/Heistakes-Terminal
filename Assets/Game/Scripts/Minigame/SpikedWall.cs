@@ -1,0 +1,24 @@
+using System.Collections;
+using UnityEngine;
+
+public class SpikedWall : MonoBehaviour
+{
+    [SerializeField] private float stunTime = 1.0f;
+
+    private void OnTriggerEnter2D(Collider2D _collider)
+    {
+        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>())
+        {
+            StartCoroutine(StunPlayer());
+        }
+    }
+
+    private IEnumerator StunPlayer()
+    {
+        MinigameHandler.Instance.SetCanMove(false);
+
+        yield return new WaitForSeconds(stunTime);
+
+        MinigameHandler.Instance.SetCanMove(true);
+    }
+}
