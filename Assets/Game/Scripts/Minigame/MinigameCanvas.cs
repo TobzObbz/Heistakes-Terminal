@@ -28,7 +28,7 @@ public class MinigameCanvas : MonoBehaviour
     private void OnEnable()
     {
         currentTime = startTime;
-        txtTimer.text = currentTime.ToString();
+        txtTimer.text = currentTime.ToString("F2");
     }
     
     public IEnumerator StartTimer()
