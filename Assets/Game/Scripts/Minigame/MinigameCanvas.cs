@@ -49,6 +49,7 @@ public class MinigameCanvas : MonoBehaviour
             yield return null;
         }
 
+        MinigameHandler.Instance.SetCanMove(false);
         StartCoroutine(ShowOutcome(false));
     }
 

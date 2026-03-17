@@ -48,11 +48,7 @@ public class MinigameHandler : MonoBehaviour
 
     private void OnJoystickMove(InputAction.CallbackContext context)
     {
-        if (!canMove)
-        {
-            adjustedMove = Vector2.zero;
-            return;
-        }
+        if (!canMove) return;
 
         if (!startGame)
         {
@@ -69,6 +65,8 @@ public class MinigameHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canMove) return;
+
         rb.MovePosition(rb.position + adjustedMove * 5f * Time.fixedDeltaTime);
     }
 }
