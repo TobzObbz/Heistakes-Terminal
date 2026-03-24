@@ -36,6 +36,7 @@ public class GoalCollision : MonoBehaviour
         AnimatorClipInfo[] animatorClipInfo = GetComponent<Animator>().GetCurrentAnimatorClipInfo(0);
         yield return new WaitForSeconds(animatorClipInfo[0].clip.length);
         MinigameHandler.Instance.SetCanMove(false);
+        MinigameHandler.Instance.GetPlayer().GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(MinigameCanvas.Instance.ShowOutcome(true));
     }
 }

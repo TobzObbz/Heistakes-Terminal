@@ -54,9 +54,21 @@ public class MinigameHandler : MonoBehaviour
         {
             startGame = true;
 
-            Coroutine timerCoroutine = StartCoroutine(MinigameCanvas.Instance.StartTimer());
-            MinigameCanvas.Instance.SetTimerCoroutine(timerCoroutine);
+            MinigameCanvas.Instance.StartTimer();
         }
+
+        //moveInput = Vector2.zero;
+
+        //if (Gamepad.current != null)
+        //{
+        //    moveInput = Gamepad.current.leftStick.ReadValue();
+        //}
+        //else if (Joystick.current != null)
+        //{
+        //    float x = Joystick.current.stick.x.ReadValue();
+        //    float y = Joystick.current.stick.y.ReadValue();
+        //    moveInput = new Vector2(x, y);
+        //}
 
         moveInput = context.ReadValue<Vector2>();   
 

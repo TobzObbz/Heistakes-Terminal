@@ -9,13 +9,13 @@ public class MinigameCanvas : MonoBehaviour
     [SerializeField] private TMP_Text txtTimer;
 
     [SerializeField] private TMP_Text txtOutcome;
+        public void SetTxtOutcome(string _text) => txtOutcome.text = _text;
 
     [SerializeField] private float startTime;
 
     private float currentTime;
 
     private Coroutine timerCoroutine;
-        public void SetTimerCoroutine(Coroutine _coroutine) => timerCoroutine = _coroutine;
 
     private void Awake()
     {
@@ -31,7 +31,12 @@ public class MinigameCanvas : MonoBehaviour
         txtTimer.text = currentTime.ToString("F2");
     }
     
-    public IEnumerator StartTimer()
+    public void StartTimer()
+    {
+        timerCoroutine = StartCoroutine(UpdateTimer());
+    }
+
+    private IEnumerator UpdateTimer()
     {
         while (currentTime > 0f)
         {
@@ -59,9 +64,14 @@ public class MinigameCanvas : MonoBehaviour
 
         if (_win)
         {
-            StopCoroutine(timerCoroutine);
+            if (timerCoroutine != null)
+            {
+                StopCoroutine(timerCoroutine);
+                timerCoroutine = null;
+            }
 
-            txtOutcome.text = "YOU WIN";
+            int levelNumber = MinigameLevelHandler.Instance.GetLevelIndex() + 2; //Index starts at 0 and refer to future level
+            txtOutcome.text = "Loading level " + levelNumber + "...";
 
             yield return new WaitForSeconds(3);
 
@@ -72,7 +82,7 @@ public class MinigameCanvas : MonoBehaviour
         }
         else if (!_win)
         {
-            txtOutcome.text = "YOU LOSE";
+            txtOutcome.text = "TIMES UP! Restarting...";
 
             yield return new WaitForSeconds(3);
 

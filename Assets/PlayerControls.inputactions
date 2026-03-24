@@ -73,7 +73,7 @@
                     "name": "JoystickMove",
                     "type": "Value",
                     "id": "7d2d81ea-dd15-4dd3-9f34-e5adb00cedc4",
-                    "expectedControlType": "Stick",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -168,7 +168,18 @@
                 },
                 {
                     "name": "",
-                    "id": "544c8fbd-c3e4-4e48-927e-3059288e8b6f",
+                    "id": "e3337ca5-5590-4e57-83b0-11e644a05d2c",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86320243-5a97-4a2a-baaf-b4d7ba108bf1",
                     "path": "<Joystick>/stick",
                     "interactions": "",
                     "processors": "",
@@ -178,15 +189,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "e3337ca5-5590-4e57-83b0-11e644a05d2c",
-                    "path": "<Joystick>/trigger",
+                    "name": "2D Vector",
+                    "id": "2763723b-d935-4c83-a202-8d8f9b55b01e",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "JoystickAction",
-                    "isComposite": false,
+                    "action": "JoystickMove",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "62f5c099-1e35-4658-8220-75f139740f1f",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "ba5d1b1a-27ab-48ce-83b5-828dfc5a7bec",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ee3889f7-3993-4afc-8a97-35442fad1811",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "5e4e5cc1-8cdc-475b-9ff6-dabb959b9775",
+                    "path": "<Joystick>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

@@ -17,8 +17,12 @@ public class SpikedWall : MonoBehaviour
     {
         MinigameHandler.Instance.SetCanMove(false);
 
+        MinigameHandler.Instance.GetPlayer().GetComponent<SpriteRenderer>().color = Color.red;
+
         yield return new WaitForSeconds(stunTime);
 
         MinigameHandler.Instance.SetCanMove(true);
+
+        MinigameHandler.Instance.GetPlayer().GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
