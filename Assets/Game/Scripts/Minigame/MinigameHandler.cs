@@ -60,7 +60,8 @@ public class MinigameHandler : MonoBehaviour
         {
             startGame = true;
 
-            auMusic.Play();
+            //Commented out music because of soundtrack
+            //auMusic.Play();
 
             MinigameCanvas.Instance.StartTimer();
         }

@@ -5,7 +5,7 @@ public class MinigameWinHandler : MonoBehaviour
 {
     public static MinigameWinHandler Instance;
 
-    [SerializeField] private GameObject minigame;
+    [SerializeField] private GameObject minigameCanvas;
     [SerializeField] private GameObject globalLight2D;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class MinigameWinHandler : MonoBehaviour
     public void WinGame()
     {
         gameObject.SetActive(true);
-        minigame.SetActive(false);
+        minigameCanvas.SetActive(false);
 
         globalLight2D.GetComponent<Light2D>().intensity = 1f;
     }
