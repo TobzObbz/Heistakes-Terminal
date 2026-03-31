@@ -11,6 +11,7 @@ public class MinigameHandler : MonoBehaviour
 
     private Vector2 moveInput;
     private Vector2 adjustedMove;
+        public Vector2 GetAdjustedMove() => adjustedMove;
         public void SetAdjustedMove(Vector2 _adjustedMove) => adjustedMove = _adjustedMove;
 
     private Rigidbody2D rb;

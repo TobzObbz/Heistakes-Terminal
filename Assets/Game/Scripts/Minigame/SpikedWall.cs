@@ -15,6 +15,20 @@ public class SpikedWall : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D _collider)
+    {
+        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>() && MinigameHandler.Instance.GetAdjustedMove().sqrMagnitude > 0f)
+        {
+            Vector2 toSpike = (transform.position - _collider.transform.position).normalized;
+            float dot = Vector2.Dot(MinigameHandler.Instance.GetAdjustedMove(), toSpike);
+
+            if (dot > 0.2f)
+            {
+                StartCoroutine(StunPlayer());
+            }    
+        }
+    }
+
     private IEnumerator StunPlayer()
     {
         MinigameHandler.Instance.SetCanMove(false);
