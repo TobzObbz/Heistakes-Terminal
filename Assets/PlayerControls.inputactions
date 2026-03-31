@@ -242,6 +242,17 @@
                     "action": "JoystickMove",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1676d261-e90f-49be-972d-d2674c370d90",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
