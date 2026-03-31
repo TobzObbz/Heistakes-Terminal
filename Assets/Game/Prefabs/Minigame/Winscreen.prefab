@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7964524807782822161}
   - component: {fileID: 1837817333506073031}
   - component: {fileID: 9120877944097607184}
+  - component: {fileID: 373159401489908319}
   m_Layer: 0
   m_Name: Winscreen
   m_TagString: Untagged
@@ -28,8 +29,8 @@ RectTransform:
   m_GameObject: {fileID: 8536504134729634494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1329395, y: 1.2823185, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4129696025286947765, guid: df844ceb3ffe5f34a9544ca1229760fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,3 +127,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8536504134729634494}
   m_CullTransparentMesh: 1
+--- !u!114 &373159401489908319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536504134729634494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcc25a670fa48440aca97a0f82de958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinigameWinHandler

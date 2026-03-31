@@ -16,6 +16,7 @@ public class SpikedWall : MonoBehaviour
     private IEnumerator StunPlayer()
     {
         MinigameHandler.Instance.SetCanMove(false);
+        MinigameHandler.Instance.SetAdjustedMove(Vector2.zero);
 
         MinigameHandler.Instance.GetPlayer().GetComponent<SpriteRenderer>().color = Color.red;
 

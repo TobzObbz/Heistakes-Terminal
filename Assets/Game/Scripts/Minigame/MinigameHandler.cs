@@ -11,11 +11,14 @@ public class MinigameHandler : MonoBehaviour
 
     private Vector2 moveInput;
     private Vector2 adjustedMove;
+        public void SetAdjustedMove(Vector2 _adjustedMove) => adjustedMove = _adjustedMove;
+
     private Rigidbody2D rb;
 
     private bool startGame = false;
 
     private bool canMove = true;
+        public bool GetCanMove() => canMove;
         public bool SetCanMove(bool _canMove) => canMove = _canMove;
 
     private void Awake()

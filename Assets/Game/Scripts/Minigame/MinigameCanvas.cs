@@ -70,8 +70,14 @@ public class MinigameCanvas : MonoBehaviour
                 timerCoroutine = null;
             }
 
+            txtOutcome.text = "";
+
             int levelNumber = MinigameLevelHandler.Instance.GetLevelIndex() + 2; //Index starts at 0 and refer to future level
-            txtOutcome.text = "Loading level " + levelNumber + "...";
+
+            if (MinigameLevelHandler.Instance.GetLevelNames().Count >= levelNumber)
+            {
+                txtOutcome.text = "Loading level " + levelNumber + "..."; 
+            }
 
             yield return new WaitForSeconds(3);
 

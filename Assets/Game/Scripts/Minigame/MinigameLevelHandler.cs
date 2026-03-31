@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +7,7 @@ public class MinigameLevelHandler : MonoBehaviour
     public static MinigameLevelHandler Instance;
 
     [SerializeField] private List<string> levelNames;
+        public List<string> GetLevelNames() => levelNames;
 
     private int levelIndex = 0;
         public int GetLevelIndex() => levelIndex;
@@ -36,7 +36,7 @@ public class MinigameLevelHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("ALL LEVELS COMPLETE");
+            MinigameWinHandler.Instance.WinGame();
         }
     }
 }
