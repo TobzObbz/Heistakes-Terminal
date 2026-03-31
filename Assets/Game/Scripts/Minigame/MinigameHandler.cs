@@ -21,6 +21,8 @@ public class MinigameHandler : MonoBehaviour
         public bool GetCanMove() => canMove;
         public bool SetCanMove(bool _canMove) => canMove = _canMove;
 
+    [SerializeField] private AudioSource auMusic;
+
     private void Awake()
     {
         if (Instance == null)
@@ -56,6 +58,8 @@ public class MinigameHandler : MonoBehaviour
         if (!startGame)
         {
             startGame = true;
+
+            auMusic.Play();
 
             MinigameCanvas.Instance.StartTimer();
         }

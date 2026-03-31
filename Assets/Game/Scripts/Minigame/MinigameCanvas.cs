@@ -17,6 +17,9 @@ public class MinigameCanvas : MonoBehaviour
 
     private Coroutine timerCoroutine;
 
+    [SerializeField] private AudioSource auTimesUp;
+    [SerializeField] private AudioSource auWin;
+
     private void Awake()
     {
         if (Instance == null)
@@ -54,6 +57,7 @@ public class MinigameCanvas : MonoBehaviour
             yield return null;
         }
 
+        auTimesUp.Play();
         MinigameHandler.Instance.SetCanMove(false);
         StartCoroutine(ShowOutcome(false));
     }
@@ -61,6 +65,8 @@ public class MinigameCanvas : MonoBehaviour
     public IEnumerator ShowOutcome(bool _win)
     {
         txtOutcome.gameObject.SetActive(true);
+
+        txtOutcome.text = "";
 
         if (_win)
         {
@@ -70,16 +76,14 @@ public class MinigameCanvas : MonoBehaviour
                 timerCoroutine = null;
             }
 
-            txtOutcome.text = "";
+            auWin.Play();
 
             int levelNumber = MinigameLevelHandler.Instance.GetLevelIndex() + 2; //Index starts at 0 and refer to future level
 
             if (MinigameLevelHandler.Instance.GetLevelNames().Count >= levelNumber)
             {
-                txtOutcome.text = "Loading level " + levelNumber + "..."; 
+                yield return StartCoroutine(TextDotsAppear("Loading level " + levelNumber));
             }
-
-            yield return new WaitForSeconds(3);
 
             if (MinigameLevelHandler.Instance != null)
             {
@@ -88,9 +92,9 @@ public class MinigameCanvas : MonoBehaviour
         }
         else if (!_win)
         {
-            txtOutcome.text = "TIMES UP! Restarting...";
+            auTimesUp.Play();
 
-            yield return new WaitForSeconds(3);
+            yield return StartCoroutine(TextDotsAppear("TIMES UP! Restarting"));
 
             if (MinigameLevelHandler.Instance != null)
             {
@@ -99,5 +103,20 @@ public class MinigameCanvas : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    private IEnumerator TextDotsAppear(string _baseText)
+    {
+        txtOutcome.text = _baseText;
+
+        int elapsedTime = 0;
+
+        //Add dots to the loading text for 3 seconds
+        while (elapsedTime < 3f)
+        {
+            yield return new WaitForSeconds(1);
+            txtOutcome.text += ".";
+            elapsedTime += 1;
+        }
     }
 }

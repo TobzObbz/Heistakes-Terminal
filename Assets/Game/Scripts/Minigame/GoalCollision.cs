@@ -5,44 +5,54 @@ public class GoalCollision : MonoBehaviour
 {
     private Coroutine successCoroutine;
 
-    private void OnTriggerEnter2D(Collider2D _collider)
+    private bool wasAbleToMove = false;
+
+    private bool levelCompleted = false;
+
+    private void Start()
     {
-        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>() && MinigameHandler.Instance.GetCanMove())
-        {
-            successCoroutine = StartCoroutine(OnSuccess());
-        }
+        levelCompleted = false;
     }
 
     private void OnTriggerStay2D(Collider2D _collider)
     {
-        if (successCoroutine != null && !MinigameHandler.Instance.GetCanMove())
+        if (_collider != MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>() || levelCompleted) return;
+
+        if (!MinigameHandler.Instance.GetCanMove() && wasAbleToMove)
         {
-            StopCoroutine(successCoroutine);
-            successCoroutine = null;
+            if (successCoroutine != null)
+            {
+                StopCoroutine(successCoroutine);
+                successCoroutine = null;
+            }
 
             Animator anim = GetComponent<Animator>();
             anim.Play("Gate Move", 0, 0f);
             anim.Update(0f);
+            anim.enabled = false;
         }
 
-        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>() && MinigameHandler.Instance.GetCanMove())
+        if (MinigameHandler.Instance.GetCanMove() && !wasAbleToMove)
         {
             if (successCoroutine == null)
             {
                 successCoroutine = StartCoroutine(OnSuccess());
             }
         }
+
+        wasAbleToMove = MinigameHandler.Instance.GetCanMove();
     }
 
     private void OnTriggerExit2D(Collider2D _collider)
     {
-        if (!gameObject.activeInHierarchy) return;
+        if (!gameObject.activeInHierarchy || !MinigameHandler.Instance.GetPlayer().activeInHierarchy) return;
 
-        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>() && MinigameHandler.Instance.GetPlayer().activeInHierarchy)
+        if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>())
         {
             Animator anim = GetComponent<Animator>();
             anim.Play("Gate Move", 0, 0f);  
             anim.Update(0f);
+            anim.enabled = false;
 
             if (successCoroutine != null)
             {
@@ -73,6 +83,7 @@ public class GoalCollision : MonoBehaviour
             yield return null;
         }
 
+        levelCompleted = true;
         MinigameHandler.Instance.SetCanMove(false);
         MinigameHandler.Instance.GetPlayer().GetComponent<SpriteRenderer>().enabled = false;
         StartCoroutine(MinigameCanvas.Instance.ShowOutcome(true));
