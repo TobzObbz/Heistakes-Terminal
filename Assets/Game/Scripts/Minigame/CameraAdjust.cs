@@ -15,14 +15,16 @@ public class CameraAdjust : MonoBehaviour
         float targetAspect = targetWidth / targetHeight;
         float windowAspect = (float)Screen.width / Screen.height;
 
-        if (windowAspect >= targetAspect)
+        float baseSize = targetHeight / 200f;
+
+        if (windowAspect > targetAspect)
         {
-            cam.orthographicSize = targetHeight / 200f;
+            cam.orthographicSize = baseSize;
         }
         else
         {
             float scaleHeight = targetAspect / windowAspect;
-            cam.orthographicSize = (targetHeight / 200f) * scaleHeight;
+            cam.orthographicSize = baseSize * scaleHeight;
         }
     }
 }

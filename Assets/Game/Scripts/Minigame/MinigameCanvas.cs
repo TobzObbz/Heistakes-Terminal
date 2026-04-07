@@ -57,6 +57,8 @@ public class MinigameCanvas : MonoBehaviour
             yield return null;
         }
 
+        txtTimer.text = "0" + 0.ToString("F2");
+
         auTimesUp.Play();
         MinigameHandler.Instance.SetCanMove(false);
         StartCoroutine(ShowOutcome(false));

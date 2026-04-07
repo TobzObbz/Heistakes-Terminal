@@ -548,11 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3475124836868124096, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 3475124836868124096, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5416058487701444327, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -594,19 +590,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6359441359621916271, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6359441359621916271, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.91
+    - target: {fileID: 5752065897220942328, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
+--- !u!1 &1771775476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3147355749395741384, guid: 0f5c8fa586db5d74c965e7df5a0cb0b5, type: 3}
+  m_PrefabInstance: {fileID: 1771775475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5459270178526139458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,9 +613,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1031919215924241940, guid: 4643ea8ee9695604385eac82c6e2b6ac, type: 3}
+      propertyPath: level
+      value: 
+      objectReference: {fileID: 8567666374287439653}
+    - target: {fileID: 1031919215924241940, guid: 4643ea8ee9695604385eac82c6e2b6ac, type: 3}
       propertyPath: minigame
       value: 
-      objectReference: {fileID: 1387618455}
+      objectReference: {fileID: 1771775476}
     - target: {fileID: 1031919215924241940, guid: 4643ea8ee9695604385eac82c6e2b6ac, type: 3}
       propertyPath: globalLight2D
       value: 
@@ -707,10 +708,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3801657445215216713, guid: 4643ea8ee9695604385eac82c6e2b6ac, type: 3}
-      propertyPath: m_PlaybackSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5154122668073107377, guid: 4643ea8ee9695604385eac82c6e2b6ac, type: 3}
       propertyPath: m_Name
       value: WinscreenCanvas
@@ -777,6 +774,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3f7075d07e77e449f2ee8923e5afaf, type: 3}
+--- !u!1 &8567666374287439653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5399133442972082753, guid: 4f3f7075d07e77e449f2ee8923e5afaf, type: 3}
+  m_PrefabInstance: {fileID: 8567666374287439652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
