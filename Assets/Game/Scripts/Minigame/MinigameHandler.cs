@@ -81,6 +81,11 @@ public class MinigameHandler : MonoBehaviour
 
         moveInput = context.ReadValue<Vector2>();   
 
+        if (moveInput.sqrMagnitude > -0.2 && moveInput.sqrMagnitude < 0.2)
+        {
+            moveInput = Vector2.zero;
+        }
+
         adjustedMove = new Vector2(-moveInput.y, moveInput.x).normalized;
     }
 

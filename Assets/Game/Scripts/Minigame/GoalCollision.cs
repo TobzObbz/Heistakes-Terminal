@@ -49,6 +49,8 @@ public class GoalCollision : MonoBehaviour
 
         if (_collider == MinigameHandler.Instance.GetPlayer().GetComponent<BoxCollider2D>())
         {
+            MinigameHandler.Instance.SetCanMove(true);
+            wasAbleToMove = false;
             Animator anim = GetComponent<Animator>();
             anim.Play("Gate Move", 0, 0f);  
             anim.Update(0f);
